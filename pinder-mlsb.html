@@ -1,0 +1,1723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MLSB PINDER Challenge &#8212; PINDER 0.1.dev1+g4096931 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=0f7d845c"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pinder-mlsb';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/pinder-mlsb.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference" href="source/pinder.html" />
+    <link rel="prev" title="FAQ: cropped monomer superposition" href="superposition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g4096931 documentation - Home"/>
+    <script>document.write(`<img src="_static/pinder.png" class="logo__image only-dark" alt="PINDER 0.1.dev1+g4096931 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pinder-index.html">Pinder index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-system.html">Pinder system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-loader.html">Pinder loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-eval.html">Pinder eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superposition.html">FAQ: cropped monomer superposition</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MLSB PINDER Challenge</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="examples.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">MLSB PINDER...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mlsb-pinder-challenge">
+<h1>MLSB PINDER Challenge<a class="headerlink" href="#mlsb-pinder-challenge" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#training-rules"><span class="xref myst">Rules: training</span></a></p></li>
+<li><p><a class="reference internal" href="#inference-rules"><span class="xref myst">Rules: inference</span></a></p></li>
+<li><p><a class="reference internal" href="#eval-dataset"><span class="xref myst">Evaluation dataset</span></a></p></li>
+<li><p><a class="reference internal" href="#accessing-training-data"><span class="xref myst">Accessing training data</span></a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#minimal-filepath-example"><span class="xref myst">Minimal filepath example</span></a></p></li>
+<li><p><a class="reference internal" href="#pinder-utilities"><span class="xref myst">Helpful pinder utilities</span></a></p></li>
+<li><p><a class="reference internal" href="#pinder-loader-and-dataset"><span class="xref myst">PinderLoader and PinderDataset</span></a></p></li>
+<li><p><a class="reference internal" href="#torch-dataloader"><span class="xref myst">Implementing a torch dataloader</span></a></p></li>
+</ol>
+</li>
+</ol>
+<p>The goal of this tutorial is to outline some basic rules for participating in the PINDER track of the MLSB challenge and provide simple hands-on examples for how participants can access and use the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dataset.</p>
+<p>Specifically, we will cover:</p>
+<ul class="simple">
+<li><p>Rules for model training</p></li>
+<li><p>Rules for valid inference submissions</p></li>
+<li><p>Accessing and loading data for training your model</p></li>
+<li><p>A description of the inputs to be provided in the evaluation set</p></li>
+</ul>
+<section id="rules-for-valid-model-training">
+<h2>Rules for valid model training <a name="training-rules"></a><a class="headerlink" href="#rules-for-valid-model-training" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>People need to use the provided train and validation sets from PINDER - no data augmentation is allowed</p></li>
+<li><p>Model selection can exclusively occur on the validation set, which was specifically designed for this in both PINDER/PLINDER</p></li>
+<li><p>Methods that rely on any model derivatives or embeddings that are trained on structures outside of PLINDER/PINDER are disallowed. E.g. ESM2, MSA: ✅ ESM3/ESMFold/SAProt: ❌</p></li>
+</ol>
+</section>
+<section id="rules-for-valid-inference-submissions">
+<h2>Rules for valid inference submissions<a name="inference-rules"></a><a class="headerlink" href="#rules-for-valid-inference-submissions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>All predictions must be derived from ONLY the inputs provided in this tutorial (canonical structures and sequences)</p></li>
+<li><p>Using additional template structures or sequences is NOT allowed</p></li>
+<li><p>No binding site information can be used</p></li>
+<li><p>For each system, you are allowed to submit <strong>at most</strong> 1 prediction! If you method produces multiple samples, you must rank/score the predictions and only supply a <strong>single</strong> prediction as the top-ranking prediction that will be used in the leaderboard.</p></li>
+<li><p>Model inference should run in under 10 minutes per system on a GPU like T4, A10G</p></li>
+<li><p>The final predictions must be in PDB file format and contain two chains: Receptor (chain R) and Ligand (chain L)</p></li>
+<li><p>Systems without a valid prediction will be penalized according to the criteria defined in <a class="reference external" href="https://github.com/pinder-org/pinder?tab=readme-ov-file#3-%EF%B8%8F-evaluation-harness"><code class="docutils literal notranslate"><span class="pre">pinder</span></code> eval</a></p></li>
+<li><p>Final rankings in the leaderboard will be determined based on the method which produces the highest percentage of systems predicted with CAPRI Acceptable quality</p></li>
+</ol>
+</section>
+<section id="evaluation-dataset">
+<h2>Evaluation dataset <a name="eval-dataset"></a><a class="headerlink" href="#evaluation-dataset" title="Link to this heading">#</a></h2>
+<p>Although the exact composition of the eval set will be shared at a future date, below we provide an overview of the dataset and what to expect</p>
+<ul class="simple">
+<li><p>Two leaderboards for each of PINDER &amp; PLINDER with 1 eval set each</p></li>
+<li><p>Eval sets are subsets of 150-200 structures from the current PINDER &amp; PLINDER test splits (subsets to enable reasonable eval runtime)</p></li>
+<li><p>Each sample of the eval sets will contain exactly one pre-prescribed input/output to ensure performance is model and not input driven</p></li>
+<li><p>Inputs will be: <code class="docutils literal notranslate"><span class="pre">(monomer</span> <span class="pre">protein</span> <span class="pre">structure</span> <span class="pre">1,</span> <span class="pre">monomer</span> <span class="pre">protein</span> <span class="pre">structure</span> <span class="pre">2,</span> <span class="pre">FASTA</span> <span class="pre">1,</span> <span class="pre">FASTA</span> <span class="pre">2)</span></code> for PINDER</p></li>
+<li><p>The focus will be on flexible docking/co-folding exclusively, i.e. monomer structures will be a single canonical structure per protein, sampled from apo and predicted structures</p></li>
+<li><p>Monomer input structures are sampled from the paired structures available in PINDER/PLINDER roughly evenly between apo &amp; predicted and roughly stratified by “flexibility” level (rigid, medium, flexible) according to specified apo/predicted-holo conformational difference thresholds</p></li>
+</ul>
+</section>
+<section id="accessing-and-loading-data-for-training">
+<h2>Accessing and loading data for training <a name="accessing-training-data"></a><a class="headerlink" href="#accessing-and-loading-data-for-training" title="Link to this heading">#</a></h2>
+<p>In order to access the train and val splits for PINDER, please refer to the <a class="reference external" href="https://github.com/pinder-org/pinder/tree/main?tab=readme-ov-file#%EF%B8%8F-getting-the-dataset">pinder documentation</a></p>
+<p>Once you have downloaded the pinder dataset, either via the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> package or directly through <code class="docutils literal notranslate"><span class="pre">gsutil</span></code>, you will have all of the necessary files for training.</p>
+<p>For those mainly interested in torch dataloaders, refer to the <a class="reference external" href="https://github.com/pinder-org/pinder#5--dataloader">readme section</a> and <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">tutorial</a> on the torch dataloader provided in pinder. TLDR:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">PinderDataset</span><span class="p">,</span> <span class="n">get_torch_loader</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_torch_loader</span><span class="p">(</span><span class="n">PinderDataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="n">split</span><span class="p">))</span> <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]]</span> <span class="c1"># do NOT use test, we will verify your pipeline does not use test in neither training nor model selection</span>
+</pre></div>
+</div>
+<p>For those interested in loading/filtering/sampling/augmenting data using pinder utilities, see remaining sections below.</p>
+<p>You are ONLY allowed to access those systems labeled with split <code class="docutils literal notranslate"><span class="pre">train</span></code> and split <code class="docutils literal notranslate"><span class="pre">val</span></code> for model training and validation, respectively.</p>
+<p>See below for two different options for accessing the index and split labels.</p>
+<p><strong>If you have already installed pinder (preferred method):</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_index</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;train&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;val&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1560682, 34), (1958, 34))
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Without installing pinder (need to install <code class="docutils literal notranslate"><span class="pre">gcsfs</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> or install the <code class="docutils literal notranslate"><span class="pre">gsutil</span></code> utility to get the index file)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">index_uri</span> <span class="o">=</span> <span class="s2">&quot;gs://pinder/2024-02/index.parquet&quot;</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;anon&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">index_uri</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;train&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;val&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1560682, 34), (1958, 34))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="minimal-example-with-filepaths">
+<h3>Minimal example with filepaths <a name="minimal-filepath-example"></a><a class="headerlink" href="#minimal-example-with-filepaths" title="Link to this heading">#</a></h3>
+<p>For those who simply want access to PDB files and/or sequences, below we provide a minimal example of how to go from a row in the pinder index to a tuple of filepaths and sequences akin to the expected inputs for inference.</p>
+<p>Later sections provide alternative means to loading data with common pinder utilities, including the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> and <code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> torch dataset.</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">pinder</span></code> data should be stored in <code class="docutils literal notranslate"><span class="pre">PINDER_BASE_DIR</span></code>. Unless you customized the download directory, this would default to:
+<code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder/2024-02/</span></code></p>
+<p>PDB files are stored in a subdirectory, named <code class="docutils literal notranslate"><span class="pre">pdbs</span></code>.</p>
+<p>To go from a row in the index to a collection of filepaths, you can either use the pydantic model for the pinder index schema (<code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code>) or construct the filepaths yourself.</p>
+<p>We will first illustrate how to do this via <code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">IndexEntry</span>
+
+<span class="n">pinder_dir</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">entry</span> <span class="o">=</span> <span class="n">IndexEntry</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+<span class="c1"># IndexEntry has a convenience property `pdb_paths` which returns a dict of structure_type: relative_path | list[relative_path]</span>
+<span class="n">relative_paths</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">pdb_paths</span>
+<span class="n">absolute_paths</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">structure_type</span><span class="p">,</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">relative_paths</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># non-canonical apo monomers are stored as a list of relative paths</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rel_path</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">alt_monomer</span> <span class="ow">in</span> <span class="n">rel_path</span><span class="p">:</span>
+            <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="n">alt_monomer</span><span class="p">)</span> 
+    <span class="c1"># Not all systems have every type of monomer. When they are not available, the relative path is &quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">rel_path</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">rel_path</span>
+    <span class="c1"># Convert relative path to absolute path </span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="n">rel_path</span>
+
+<span class="n">relative_paths</span><span class="p">,</span> <span class="n">absolute_paths</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;native&#39;: &#39;pdbs/7eyd__GB1_P07120--7eyd__HJ1_P07121.pdb&#39;,
+  &#39;holo_R&#39;: &#39;pdbs/7eyd__GB1_P07120-R.pdb&#39;,
+  &#39;holo_L&#39;: &#39;pdbs/7eyd__HJ1_P07121-L.pdb&#39;,
+  &#39;predicted_R&#39;: &#39;pdbs/af__P07120.pdb&#39;,
+  &#39;predicted_L&#39;: &#39;pdbs/af__P07121.pdb&#39;,
+  &#39;apo_R&#39;: &#39;&#39;,
+  &#39;apo_L&#39;: &#39;&#39;,
+  &#39;apo_R_alt&#39;: [],
+  &#39;apo_L_alt&#39;: []},
+ {&#39;native&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/7eyd__GB1_P07120--7eyd__HJ1_P07121.pdb&#39;),
+  &#39;holo_R&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/7eyd__GB1_P07120-R.pdb&#39;),
+  &#39;holo_L&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/7eyd__HJ1_P07121-L.pdb&#39;),
+  &#39;predicted_R&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__P07120.pdb&#39;),
+  &#39;predicted_L&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__P07121.pdb&#39;),
+  &#39;apo_R&#39;: &#39;&#39;,
+  &#39;apo_L&#39;: &#39;&#39;,
+  &#39;apo_R_alt&#39;: [],
+  &#39;apo_L_alt&#39;: []})
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, the <code class="docutils literal notranslate"><span class="pre">IndexEntry.pdb_paths</span></code> property was used to conveniently extract filepaths from a row in the index. This is done by using the following columns from the index:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_R_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_L_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted_R_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted_L_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_R_pdbs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_L_pdbs</span></code></p></li>
+</ul>
+<p>It is possible to do this yourself without IndexEntry:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">absolute_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;native&quot;</span><span class="p">:</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">pdb_cols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;holo_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># holo monomers for receptor and ligand, respectively</span>
+    <span class="s2">&quot;predicted_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;predicted_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># predicted monomers</span>
+    <span class="s2">&quot;apo_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># canonical apo monomers</span>
+    <span class="s2">&quot;apo_R_pdbs&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_L_pdbs&quot;</span><span class="p">,</span> <span class="c1"># canonical + non-canonical (alternative) apo monomers, separated by a semi-colon</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">pdb_column</span> <span class="ow">in</span> <span class="n">pdb_cols</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pdb_column</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;pdbs&quot;</span><span class="p">):</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="n">alt_apo</span> <span class="k">if</span> <span class="n">alt_apo</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> 
+            <span class="k">for</span> <span class="n">alt_apo</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pdb_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="n">pdb_name</span> <span class="k">if</span> <span class="n">pdb_name</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+<span class="n">absolute_paths</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;native&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4tvx__W1_Q46901--4tvx__M1_Q46899.pdb&#39;),
+ &#39;holo_R_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4tvx__W1_Q46901-R.pdb&#39;),
+ &#39;holo_L_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4tvx__M1_Q46899-L.pdb&#39;),
+ &#39;predicted_R_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__Q46901.pdb&#39;),
+ &#39;predicted_L_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__Q46899.pdb&#39;),
+ &#39;apo_R_pdb&#39;: &#39;&#39;,
+ &#39;apo_L_pdb&#39;: &#39;&#39;,
+ &#39;apo_R_pdbs&#39;: [&#39;&#39;],
+ &#39;apo_L_pdbs&#39;: [&#39;&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most minimal interface for loading these filepaths and extracting e.g. coordinates and sequence would be via <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.structure</span></code> module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+<span class="c1"># Note: since this notebook is executed in CI, I will also create a `PinderSystem` object which will auto-download any missing PDB file</span>
+<span class="c1"># You do NOT need to do this if you already downloaded the dataset</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;native&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+    
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">])</span>
+<span class="n">receptor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:32,378 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:32,720 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.34s
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/4tvx__W1_Q46901-R.pdb,
+    uniprot_map=None,
+    pinder_id=&#39;4tvx__W1_Q46901-R&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (7393,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-39.326, -51.119, -76.787],
+       [-38.243, -51.441, -75.865],
+       [-38.295, -52.91 , -75.445],
+       [-37.266, -53.576, -75.363],
+       [-38.303, -50.539, -74.632],
+       [-37.394, -51.287, -76.309],
+       [-39.498, -53.411, -75.181],
+       [-39.667, -54.767, -74.664],
+       [-39.278, -55.839, -75.684],
+       [-38.423, -56.683, -75.412]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;LLIDNWIPVRPRNGGKVQIINLQSLYCSRDQWRLSLPRDDMELAALALLVCIGQIIAPAKDDVEFRHRIMNPLTEDEFQQLIAPWIDMFYLNHAEHPFMQTKGVKANDVTPMEKLLAGVSGATNCAFVNQPGQGEALCGGCTAIALFNQANQAPGFGGGFKSGLRGGTPVTTFVRGIDLRSTVLLNVLTLPRLQKQFPNESHTENQPTWIKPIKSNESIPASSIGFVRGLFWQPAHIELCDPIGIGKCSCCGQESNLRYTGFLKEKFTFTVNGLWPHPHSPCLVTVKKGEVEEKFLAFTTSAPSWTQISRVVVDKIIQNNGNRVAAVVNQFRNIAPQSPLELIMGGYRNNQASILERRHDVLMFNQGWQQYGNVINEIVTVGLGYKTALRKALYTFAEGFKNKDFKGAGVSVHETAERHFYRQSELLIPDVLANVNFSQADEVIADLRDKLHQLCEMLFNQSVAPYAHHPKLISTLALARATLYKHLRELKPQ&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">fasta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&gt;4tvx__W1_Q46901-R\nLLIDNWIPVRPRNGGKVQIINLQSLYCSRDQWRLSLPRDDMELAALALLVCIGQIIAPAKDDVEFRHRIMNPLTEDEFQQLIAPWIDMFYLNHAEHPFMQTKGVKANDVTPMEKLLAGVSGATNCAFVNQPGQGEALCGGCTAIALFNQANQAPGFGGGFKSGLRGGTPVTTFVRGIDLRSTVLLNVLTLPRLQKQFPNESHTENQPTWIKPIKSNESIPASSIGFVRGLFWQPAHIELCDPIGIGKCSCCGQESNLRYTGFLKEKFTFTVNGLWPHPHSPCLVTVKKGEVEEKFLAFTTSAPSWTQISRVVVDKIIQNNGNRVAAVVNQFRNIAPQSPLELIMGGYRNNQASILERRHDVLMFNQGWQQYGNVINEIVTVGLGYKTALRKALYTFAEGFKNKDFKGAGVSVHETAERHFYRQSELLIPDVLANVNFSQADEVIADLRDKLHQLCEMLFNQSVAPYAHHPKLISTLALARATLYKHLRELKPQ&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can also write the Structure object to a PDB file if desired (e.g. after making changes)</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+<span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmp_dir</span><span class="p">:</span>
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">)</span>
+    <span class="n">receptor</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s2">&quot;modified_receptor.pdb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-pinder-utilities-to-construct-a-dataloader">
+<h3>Using pinder utilities to construct a dataloader <a name="pinder-utilities"></a><a class="headerlink" href="#using-pinder-utilities-to-construct-a-dataloader" title="Link to this heading">#</a></h3>
+<p>Before proceeding with this section, you may find it helpful to review the existing tutorials available in <code class="docutils literal notranslate"><span class="pre">pinder</span></code>.</p>
+<p>Specifcially, the tutorials covering:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-index.html">pinder index</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-system.html">pinder system</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">pinder loader</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/superposition.html">cropped superposition</a></p></li>
+</ul>
+<p><strong>We will start by looking at the most basic way to load items from the training and validation set: via <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> objects</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+
+<span class="k">def</span> <span class="nf">get_system</span><span class="p">(</span><span class="n">system_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PinderSystem</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">system_id</span><span class="p">)</span>
+
+
+<span class="n">system</span> <span class="o">=</span> <span class="n">get_system</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">system</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        &#39;split&#39;,
+        &#39;train&#39;,
+    ),
+    (
+        &#39;id&#39;,
+        &#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+    ),
+    (
+        &#39;pdb_id&#39;,
+        &#39;8phr&#39;,
+    ),
+    (
+        &#39;cluster_id&#39;,
+        &#39;cluster_24559_24559&#39;,
+    ),
+    (
+        &#39;cluster_id_R&#39;,
+        &#39;cluster_24559&#39;,
+    ),
+    (
+        &#39;cluster_id_L&#39;,
+        &#39;cluster_24559&#39;,
+    ),
+    (
+        &#39;pinder_s&#39;,
+        False,
+    ),
+    (
+        &#39;pinder_xl&#39;,
+        False,
+    ),
+    (
+        &#39;pinder_af2&#39;,
+        False,
+    ),
+    (
+        &#39;uniprot_R&#39;,
+        &#39;UNDEFINED&#39;,
+    ),
+    (
+        &#39;uniprot_L&#39;,
+        &#39;UNDEFINED&#39;,
+    ),
+    (
+        &#39;holo_R_pdb&#39;,
+        &#39;8phr__X4_UNDEFINED-R.pdb&#39;,
+    ),
+    (
+        &#39;holo_L_pdb&#39;,
+        &#39;8phr__W4_UNDEFINED-L.pdb&#39;,
+    ),
+    (
+        &#39;predicted_R_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;predicted_L_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_R_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_R_pdbs&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_pdbs&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;holo_R&#39;,
+        True,
+    ),
+    (
+        &#39;holo_L&#39;,
+        True,
+    ),
+    (
+        &#39;predicted_R&#39;,
+        False,
+    ),
+    (
+        &#39;predicted_L&#39;,
+        False,
+    ),
+    (
+        &#39;apo_R&#39;,
+        False,
+    ),
+    (
+        &#39;apo_L&#39;,
+        False,
+    ),
+    (
+        &#39;apo_R_quality&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_quality&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;chain1_neff&#39;,
+        10.78125,
+    ),
+    (
+        &#39;chain2_neff&#39;,
+        11.1171875,
+    ),
+    (
+        &#39;chain_R&#39;,
+        &#39;X4&#39;,
+    ),
+    (
+        &#39;chain_L&#39;,
+        &#39;W4&#39;,
+    ),
+    (
+        &#39;contains_antibody&#39;,
+        False,
+    ),
+    (
+        &#39;contains_antigen&#39;,
+        False,
+    ),
+    (
+        &#39;contains_enzyme&#39;,
+        False,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__X4_UNDEFINED--8phr__W4_UNDEFINED.pdb,
+    uniprot_map=None,
+    pinder_id=&#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (2556,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__X4_UNDEFINED-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/8phr__X4_UNDEFINED-R.parquet,
+    pinder_id=&#39;8phr__X4_UNDEFINED-R&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1358,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__W4_UNDEFINED-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/8phr__W4_UNDEFINED-L.parquet,
+    pinder_id=&#39;8phr__W4_UNDEFINED-L&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1198,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+apo_receptor=None
+apo_ligand=None
+pred_receptor=None
+pred_ligand=None
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will notice in the printed <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object has the following properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code> - the ground-truth dimer complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_receptor</span></code> - the receptor chain (monomer) from the ground-truth complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_ligand</span></code> - the ligand chain (monomer) from the ground-truth complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_receptor</span></code> - the canonical <em>apo</em> chain (monomer) paired to the receptor chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_ligand</span></code> - the canonical <em>apo</em> chain (monomer) paired to the ligand chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred_receptor</span></code> - the AlphaFold2 predicted monomer paired to the receptor chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred_ligand</span></code> - the AlphaFold2 predicted monomer paired to the ligand chain</p></li>
+</ul>
+<p>These properties are pointers to <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects. The <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object provides the most direct mode of access to structures and associated properties.</p>
+<p><strong>Note: not all systems have an apo and/or predicted structure for all chains of the ground-truth dimer complex!</strong></p>
+<p>As was the case in the example above, when the alternative monomers are not available, the property will have a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>You can determine which systems have which alternative monomer pairings <em>a priori</em> by looking at the boolean columns in the index <code class="docutils literal notranslate"><span class="pre">apo_R</span></code> and <code class="docutils literal notranslate"><span class="pre">apo_L</span></code> for the apo receptor and ligand, and <code class="docutils literal notranslate"><span class="pre">predicted_R</span></code> and <code class="docutils literal notranslate"><span class="pre">predicted_L</span></code> for the predicted receptor and ligand, respectively.</p>
+<p>For instance, we can load a different system that <em>does</em> have apo receptor and ligand as such:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_system</span> <span class="o">=</span> <span class="n">get_system</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;apo_R and apo_L&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">apo_system</span><span class="o">.</span><span class="n">apo_receptor</span>
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">apo_system</span><span class="o">.</span><span class="n">apo_ligand</span> 
+
+<span class="n">receptor</span><span class="p">,</span> <span class="n">ligand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3wdb__A1_P9WPC9.pdb,
+     uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3wdb__A1_P9WPC9.parquet,
+     pinder_id=&#39;3wdb__A1_P9WPC9&#39;,
+     atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1144,),
+     pdb_engine=&#39;fastpdb&#39;,
+ ),
+ Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/pdbs/6ucr__A1_P9WPC9.pdb,
+     uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/6ucr__A1_P9WPC9.parquet,
+     pinder_id=&#39;6ucr__A1_P9WPC9&#39;,
+     atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1193,),
+     pdb_engine=&#39;fastpdb&#39;,
+ ))
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now access e.g. the sequence and the coordinates of the structures via the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PLGSMFERFTDRARRVVVLAQEEARMLNHNYIGTEHILLGLIHEGEGVAAKSLESLGISLEGVRSQVEEIIGQGQQAPSGHIPFTPRAKKVLELSLREALQLGHNYIGTEHILLGLIREGEGVAAQVLVKLGAELTRVRQQVIQLLSGY&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-12.982, -17.271, -11.271],
+       [-14.36 , -17.069, -11.749],
+       [-15.261, -16.373, -10.703],
+       [-15.461, -15.161, -10.801],
+       [-14.842, -18.494, -12.077]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can always access the underyling biotite <a class="reference external" href="https://www.biotite-python.org/latest/apidoc/biotite.structure.AtomArray.html">AtomArray</a> via the <code class="docutils literal notranslate"><span class="pre">Structure.atom_array</span></code> property:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([
+	Atom(np.array([-12.982, -17.271, -11.271], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;N&quot;, element=&quot;N&quot;, b_factor=0.0),
+	Atom(np.array([-14.36 , -17.069, -11.749], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;CA&quot;, element=&quot;C&quot;, b_factor=0.0),
+	Atom(np.array([-15.261, -16.373, -10.703], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;C&quot;, element=&quot;C&quot;, b_factor=0.0),
+	Atom(np.array([-15.461, -15.161, -10.801], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;O&quot;, element=&quot;O&quot;, b_factor=0.0),
+	Atom(np.array([-14.842, -18.494, -12.077], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;CB&quot;, element=&quot;C&quot;, b_factor=0.0)
+])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more comprehensive overview of all of the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> class properties, refer to the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-system.html">pinder system</a> tutorial.</p>
+</section>
+<section id="using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems">
+<h3>Using PinderLoader and PinderDataset to fetch, filter, transform systems <a name="pinder-loader-and-dataset"></a><a class="headerlink" href="#using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems" title="Link to this heading">#</a></h3>
+<p>While the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object provides a self-contained access to structures associated with a dimer system, the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> provides a base abstraction for how to iterate over systems, apply optional filters and/or transforms, and return training and validation data represented as <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> and <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> is an example implementation of a torch <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> that can be consumed in a torch <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>. It uses the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> under the hood and additionally implements a default <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">target_transform</span></code> function that converts the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects returned by <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> into dictionaries of structural properties encoded as tensors. The return value of the <code class="docutils literal notranslate"><span class="pre">PinderDataset.__getitem__</span></code> represents an example of dataset sample that is suitable for collating into <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> batches via the default <code class="docutils literal notranslate"><span class="pre">collate_fn</span></code> defined in <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.dataset.collate_batch</span></code>.</p>
+<p>This is covered in much greater detail in the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">pinder loader</a> tutorial, but we will quickly showcase how both can be used to load data in an ML context.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderLoader</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByResidueCount</span><span class="p">(</span><span class="n">min_residue_count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_residue_count</span><span class="o">=</span><span class="mi">2000</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+<span class="p">)</span>
+
+<span class="n">loader</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderLoader(split=val, monomers=holo, systems=1958)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now access individual items in the loader or iterate over it.</p>
+<p>The current default return value of <code class="docutils literal notranslate"><span class="pre">PinderLoader.__getitem__</span></code> is a tuple consisting of <code class="docutils literal notranslate"><span class="pre">(system,</span> <span class="pre">feature_complex,</span> <span class="pre">target_complex)</span></code>:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system</span></code>: A <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> instance corresponding to the item index</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_complex</span></code>: A <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object containing a sampled receptor and ligand monomer superimposed to the ground-truth complex.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target_complex</span></code>: A <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object containing the ground-truth holo complex.</p></li>
+</ol>
+<p>Note: the monomers in the <code class="docutils literal notranslate"><span class="pre">feature_complex</span></code> can consist of holo/apo/pred or a mix of them. You can control which monomer is selected via the <code class="docutils literal notranslate"><span class="pre">monomer_priority</span></code> argument.</p>
+<p>Valid values are:</p>
+<ul class="simple">
+<li><p>holo (default)</p></li>
+<li><p>apo</p></li>
+<li><p>pred</p></li>
+<li><p>random (select a monomer at random from the set of monomer types available in both the receptor and ligand)</p></li>
+<li><p>random_mixed (select a monomer at random from the set of monomer types available in the receptor and ligand, separately)</p></li>
+</ul>
+<p>If you wanted to leverage the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> but mainly just want the filepaths and/or sequence, you can do so with the returned <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">loader</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">])</span>
+<span class="c1"># Can do things like e.g.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./receptor_</span><span class="si">{</span><span class="n">receptor</span><span class="o">.</span><span class="n">pinder_id</span><span class="si">}</span><span class="s2">.fasta&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">receptor</span><span class="o">.</span><span class="n">fasta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:35,187 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:35,305 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.12s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">loaded_systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># for faster exec in CI</span>
+<span class="k">for</span> <span class="n">system</span><span class="p">,</span> <span class="n">feature_complex</span><span class="p">,</span> <span class="n">target_complex</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">loader</span><span class="p">):</span>
+    <span class="n">loaded_systems</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loaded_systems</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="k">break</span>
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1958 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 1/1958 [00:00&lt;06:50,  4.77it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:35,740 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:35,989 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.25s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 2/1958 [00:00&lt;10:35,  3.08it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:36,146 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=23
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:36,966 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.82s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 3/1958 [00:01&lt;20:51,  1.56it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:37,160 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=9
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:37,568 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.41s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 4/1958 [00:02&lt;23:37,  1.38it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:38,016 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:38,296 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.28s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 5/1958 [00:02&lt;20:17,  1.60it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:38,459 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:38,706 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.25s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 6/1958 [00:03&lt;17:53,  1.82it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:38,867 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:39,100 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.23s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 7/1958 [00:03&lt;16:23,  1.98it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:39,276 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=11
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:39,646 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.37s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 8/1958 [00:04&lt;16:51,  1.93it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:39,826 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:40,111 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.29s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 9/1958 [00:04&lt;16:09,  2.01it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:40,277 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:40,563 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.29s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 9/1958 [00:05&lt;19:21,  1.68it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">loaded_systems</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PinderDataset - torch dataset</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span><span class="p">,</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">PinderDataset</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByResidueCount</span><span class="p">(</span><span class="n">min_residue_count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_residue_count</span><span class="o">=</span><span class="mi">2000</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># We can include Structure-level transforms (and filters) which will operate on the target and feature complexes returned by PinderLoader</span>
+<span class="n">structure_transforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">SelectAtomTypes</span><span class="p">(</span><span class="n">atom_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PinderDataset</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> 
+    <span class="c1"># We can leverage holo, apo, pred, random and random_mixed monomer sampling strategies</span>
+    <span class="n">monomer_priority</span><span class="o">=</span><span class="s2">&quot;random_mixed&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span><span class="p">,</span>
+    <span class="n">structure_transforms</span><span class="o">=</span><span class="n">structure_transforms</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">train_dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pinder.core.loader.dataset.PinderDataset at 0x7ff6ba232b90&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now access individual items in the PinderDataset or iterate over it.</p>
+<p>The current default return value of <code class="docutils literal notranslate"><span class="pre">PinderDataset.__getitem__</span></code> is a dict consisting of the following key, value pairs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target_complex</span></code>: The ground-truth holo dimer, represented with a set of default properties encoded as <code class="docutils literal notranslate"><span class="pre">Tensor</span></code>’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_complex</span></code>: The sampled dimer complex, representing “features”, also represented with a set of default properties encoded as <code class="docutils literal notranslate"><span class="pre">Tensor</span></code>’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The pinder ID for the selected system</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target_id</span></code>: The IDs of the receptor and ligand holo monomers, concatenated into a single ID string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample_id</span></code>: The IDs of the sampled receptor and ligand holo monomers, concatenated into a single ID string. This can be useful for debugging purposes or generally tracking which specific monomers are selected when targeting alternative monomers (more on this shortly)</p></li>
+</ul>
+<p>Each of the <code class="docutils literal notranslate"><span class="pre">target_complex</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_complex</span></code> values are dictionaries with structural properties encoded by the <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.geodata.structure2tensor</span></code> function by default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atom_coordinates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atom_types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_coordinates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_ids</span></code></p></li>
+</ul>
+<p>You can choose to use a different representation by overriding the default values of <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">target_transform</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_item</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data_item</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;target_complex&#39;: {&#39;atom_types&#39;: tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 1.,  ..., 0., 0., 0.]]),
+  &#39;residue_types&#39;: tensor([[16.],
+          [16.],
+          [16.],
+          ...,
+          [ 0.],
+          [ 0.],
+          [ 0.]]),
+  &#39;atom_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [177.7620, 463.8650, 166.9020],
+          [177.4130, 465.0800, 167.7550],
+          [176.8000, 464.9490, 168.8150]]),
+  &#39;residue_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [177.7620, 463.8650, 166.9020],
+          [177.4130, 465.0800, 167.7550],
+          [176.8000, 464.9490, 168.8150]]),
+  &#39;residue_ids&#39;: tensor([  4.,   4.,   4.,  ..., 182., 182., 182.])},
+ &#39;feature_complex&#39;: {&#39;atom_types&#39;: tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [1., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 1.,  ..., 0., 0., 0.]]),
+  &#39;residue_types&#39;: tensor([[16.],
+          [16.],
+          [16.],
+          ...,
+          [ 0.],
+          [ 0.],
+          [ 0.]]),
+  &#39;atom_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [177.7620, 463.8650, 166.9020],
+          [177.4130, 465.0800, 167.7550],
+          [176.8000, 464.9490, 168.8150]]),
+  &#39;residue_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [177.7620, 463.8650, 166.9020],
+          [177.4130, 465.0800, 167.7550],
+          [176.8000, 464.9490, 168.8150]]),
+  &#39;residue_ids&#39;: tensor([  4.,   4.,   4.,  ..., 182., 182., 182.])},
+ &#39;id&#39;: &#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+ &#39;sample_id&#39;: &#39;8phr__X4_UNDEFINED-R--8phr__W4_UNDEFINED-L&#39;,
+ &#39;target_id&#39;: &#39;8phr__X4_UNDEFINED-R--8phr__W4_UNDEFINED-L&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">collate_batch</span><span class="p">,</span> <span class="n">get_torch_loader</span>
+
+<span class="c1"># Now wrap the dataset in a torch DataLoader</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">get_torch_loader</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="p">,</span> 
+    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">collate_fn</span><span class="o">=</span><span class="n">collate_batch</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+<span class="p">)</span>
+
+<span class="c1"># Get a batch from the dataloader</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">))</span>
+
+<span class="c1"># expected batch dict keys</span>
+<span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
+    <span class="s2">&quot;target_complex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;feature_complex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;target_id&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">feature_coords</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;feature_complex&quot;</span><span class="p">][</span><span class="s2">&quot;atom_coordinates&quot;</span><span class="p">]</span>
+<span class="c1"># Ensure batch size propagates to tensor dims</span>
+<span class="k">assert</span> <span class="n">feature_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">batch_size</span>
+<span class="c1"># Ensure coordinates have dim 3</span>
+<span class="k">assert</span> <span class="n">feature_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:45,059 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:45,231 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.17s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:45,426 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-05 22:47:45,741 | pinder.core.utils.cloud.process_many:23 | INFO : runtime succeeded:      0.32s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;target_complex&#39;: {&#39;atom_types&#39;: tensor([[[ 0.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           ...,
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 0.,  0.,  1.,  ...,  0.,  0.,  0.]],
+  
+          [[ 0.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           ...,
+           [-1., -1., -1.,  ..., -1., -1., -1.],
+           [-1., -1., -1.,  ..., -1., -1., -1.],
+           [-1., -1., -1.,  ..., -1., -1., -1.]]]),
+  &#39;residue_types&#39;: tensor([[[ 0.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [ 8.],
+           [ 8.],
+           [ 8.]],
+  
+          [[14.],
+           [14.],
+           [14.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]]]),
+  &#39;atom_coordinates&#39;: tensor([[[ 271.1600,  207.0940,  213.1500],
+           [ 271.6990,  206.4030,  214.3440],
+           [ 273.1830,  206.7460,  214.5100],
+           ...,
+           [ 318.2130,  149.0800,  227.5130],
+           [ 316.9380,  148.6570,  226.7880],
+           [ 316.6730,  149.2870,  225.7460]],
+  
+          [[   3.1940,  -35.9670,  -39.8330],
+           [   3.2740,  -35.1570,  -38.5980],
+           [   3.1310,  -33.6530,  -38.8990],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]]]),
+  &#39;residue_coordinates&#39;: tensor([[[ 271.1600,  207.0940,  213.1500],
+           [ 271.6990,  206.4030,  214.3440],
+           [ 273.1830,  206.7460,  214.5100],
+           ...,
+           [ 318.2130,  149.0800,  227.5130],
+           [ 316.9380,  148.6570,  226.7880],
+           [ 316.6730,  149.2870,  225.7460]],
+  
+          [[   3.1940,  -35.9670,  -39.8330],
+           [   3.2740,  -35.1570,  -38.5980],
+           [   3.1310,  -33.6530,  -38.8990],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]]]),
+  &#39;residue_ids&#39;: tensor([[ 10.,  10.,  10.,  ..., 292., 292., 292.],
+          [ 12.,  12.,  12.,  ..., -99., -99., -99.]])},
+ &#39;feature_complex&#39;: {&#39;atom_types&#39;: tensor([[[ 0.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           ...,
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 0.,  0.,  1.,  ...,  0.,  0.,  0.]],
+  
+          [[ 0.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           [ 1.,  0.,  0.,  ...,  0.,  0.,  0.],
+           ...,
+           [-1., -1., -1.,  ..., -1., -1., -1.],
+           [-1., -1., -1.,  ..., -1., -1., -1.],
+           [-1., -1., -1.,  ..., -1., -1., -1.]]]),
+  &#39;residue_types&#39;: tensor([[[ 0.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [ 8.],
+           [ 8.],
+           [ 8.]],
+  
+          [[14.],
+           [14.],
+           [14.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]]]),
+  &#39;atom_coordinates&#39;: tensor([[[ 271.1600,  207.0940,  213.1500],
+           [ 271.6990,  206.4030,  214.3440],
+           [ 273.1830,  206.7460,  214.5100],
+           ...,
+           [ 318.2130,  149.0800,  227.5130],
+           [ 316.9380,  148.6570,  226.7880],
+           [ 316.6730,  149.2870,  225.7460]],
+  
+          [[   3.1940,  -35.9670,  -39.8330],
+           [   3.2740,  -35.1570,  -38.5980],
+           [   3.1310,  -33.6530,  -38.8990],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]]]),
+  &#39;residue_coordinates&#39;: tensor([[[ 271.1600,  207.0940,  213.1500],
+           [ 271.6990,  206.4030,  214.3440],
+           [ 273.1830,  206.7460,  214.5100],
+           ...,
+           [ 318.2130,  149.0800,  227.5130],
+           [ 316.9380,  148.6570,  226.7880],
+           [ 316.6730,  149.2870,  225.7460]],
+  
+          [[   3.1940,  -35.9670,  -39.8330],
+           [   3.2740,  -35.1570,  -38.5980],
+           [   3.1310,  -33.6530,  -38.8990],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]]]),
+  &#39;residue_ids&#39;: tensor([[ 10.,  10.,  10.,  ..., 292., 292., 292.],
+          [ 12.,  12.,  12.,  ..., -99., -99., -99.]])},
+ &#39;id&#39;: [&#39;7eak__A57_A0A060BKX4--7eak__A58_A0A060BKX4&#39;,
+  &#39;7adi__A2_D9N164--7adi__B2_D9N164&#39;],
+ &#39;sample_id&#39;: [&#39;7eak__A57_A0A060BKX4-R--7eak__A58_A0A060BKX4-L&#39;,
+  &#39;7adi__A2_D9N164-R--af__D9N164&#39;],
+ &#39;target_id&#39;: [&#39;7eak__A57_A0A060BKX4-R--7eak__A58_A0A060BKX4-L&#39;,
+  &#39;7adi__A2_D9N164-R--7adi__B2_D9N164-L&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementing-your-own-pytorch-dataset-dataloader-for-pinder">
+<h3>Implementing your own PyTorch Dataset &amp; DataLoader for pinder <a name="torch-dataloader"></a><a class="headerlink" href="#implementing-your-own-pytorch-dataset-dataloader-for-pinder" title="Link to this heading">#</a></h3>
+<p>We invite you to review the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html#implementing-your-own-pytorch-dataset-dataloader-for-pinder">existing tutorial</a> on this topic in the pinder documentation. Please don’t hesitate to ask questions or otherwise engage via GitHub issues!</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-valid-model-training">Rules for valid model training <a name="training-rules"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-valid-inference-submissions">Rules for valid inference submissions<a name="inference-rules"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-dataset">Evaluation dataset <a name="eval-dataset"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-loading-data-for-training">Accessing and loading data for training <a name="accessing-training-data"></a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example-with-filepaths">Minimal example with filepaths <a name="minimal-filepath-example"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pinder-utilities-to-construct-a-dataloader">Using pinder utilities to construct a dataloader <a name="pinder-utilities"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems">Using PinderLoader and PinderDataset to fetch, filter, transform systems <a name="pinder-loader-and-dataset"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-your-own-pytorch-dataset-dataloader-for-pinder">Implementing your own PyTorch Dataset &amp; DataLoader for pinder <a name="torch-dataloader"></a></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/pinder-mlsb.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/pinder-mlsb.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
